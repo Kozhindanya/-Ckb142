@@ -1,13 +1,19 @@
-#include <stdio.h> #include <math.h>
-int main() { double x = 1.426; double y = -1.22; double z = 3.5;
-double a = (2.0 * cos(x - M_PI / 6.0)) / (0.5 + sin(y) * sin(y));
-double b = 1.0 + (z * z) / (3.0 + (z * z) / 5.0);
+#include <stdio.h>
+#include <math.h>
+int main() 
+{
+    double x=0.61;
+    double y=0.9;
+    double z=0.3;
 
-printf("x = %.3f\n", x);
-printf("y = %.3f\n", y);
-printf("z = %.3f\n", z);
-printf("a = %.3f\n", a);
-printf("b = %.3f\n", b);
+    double a=(pow(z,2*x)+pow(y,-x)*cos(z+y)*x)/(x+1);
+    double b=sqrt(pow(x,2)+y)-pow(y,2)*pow(sin((x+z)/x),3);
 
-return 0;
+    printf("x = %.3f\n", x);
+    printf("y = %.3f\n", y);
+    printf("z = %.3f\n", z);
+    printf("a = %.3f\n", a);
+    printf("b = %.3f\n", b);
+
+    return 0;
 }
