@@ -7,15 +7,7 @@
  * @return double Расстояние между шарами в метрах
  */
 double calculate_distance(double m_tonnes,double f_coeff) 
-{
-    const double G = 6.6743e-11;// Гравитационная постоянная
-    // Перевод в систему СИ (тонны в кг, F*10^-5 в Н)
-    double m_kg = m_tonnes * 1000.0;
-    double force = f_coeff * 1e-5;
-    // Вычисление расстояния по формуле закона всемирного тяготения
-    double distance = sqrt((G * m_kg * m_kg) / force);
-    return distance;
-}
+
 /**
  * @brief Точка входа в программу
  * @return 0, если программа выполнена корректно, иначе не 0
@@ -36,4 +28,14 @@ int main()
     printf("Расстояние между шарами: %.4f м\n", distance);
 
     return 0;
+}
+double calculate_distance(double m_tonnes,double f_coeff) 
+{
+    const double G = 6.6743e-11;// Гравитационная постоянная
+    // Перевод в систему СИ (тонны в кг, F*10^-5 в Н)
+    double m_kg = m_tonnes * 1000.0;
+    double force = f_coeff * 1e-5;
+    // Вычисление расстояния по формуле закона всемирного тяготения
+    double distance = sqrt((G * m_kg * m_kg) / force);
+    return distance;
 }
