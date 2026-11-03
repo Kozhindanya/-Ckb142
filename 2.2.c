@@ -2,13 +2,25 @@
 #include <math.h>
 #include <float.h>
 #include <stdlib.h>
-
 #define M_PI 3.14159265358979323846
 
+/**
+ * @brief Считывает с клавиатуры занчение с плавающей точкой
+ * @return Считанное значение
+ */
 double getDouble();
 
+/**
+ * @brief Вычисляет значение функции  по заданной формуле
+ * @param x значение параметра x
+ * @return Расчитанное значение
+ */
 double y(const double x);
 
+/**
+ * @brief Точка входа в программу
+ * @return 0, если программа выполнена корректно, иначе не 0
+ */
 int main()
 {
     printf("Enter x: ");
