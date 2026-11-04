@@ -51,7 +51,7 @@ int main()
     double c = getDouble();
     
     printf("Choose operation (%d - Count negative, %d - Abs sum): ",OP_COUNT_NEGATIVE,OP_ABS_SUM);
-    int choice = (int)getDouble();
+    int choice = getDouble();
 
     switch (choice)
     {
