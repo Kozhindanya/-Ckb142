@@ -6,22 +6,26 @@
  * @param f_coeff Коэффицент силы F
  * @return double Расстояние между шарами в метрах
  */
-double calculate_distance(double m_tonnes,double f_coeff) 
-
+double calculate_distance(double m_tonnes,double f_coeff);
+/**
+ * @brief Считывает с клавиатуры занчение с плавающей точкой
+ * @return Считанное значение
+ */
+double getDouble();
 /**
  * @brief Точка входа в программу
  * @return 0, если программа выполнена корректно, иначе не 0
  */
-int main() 
+int main()
 {
     double m_tonnes=0.0;
     double f_coeff=0.0;
 
     printf("Введите массу шаров в тоннах (m): \n ");
-    scanf("%lf", &m_tonnes);
+    m_tonnes=getDouble();
 
     printf("Введите коэффициент силы F: \n");
-    scanf("%lf", &f_coeff);
+    f_coeff=getDouble();
 
     // вызов функции для расчёта
     double distance = calculate_distance(m_tonnes,f_coeff);
@@ -38,4 +42,10 @@ double calculate_distance(double m_tonnes,double f_coeff)
     // Вычисление расстояния по формуле закона всемирного тяготения
     double distance = sqrt((G * m_kg * m_kg) / force);
     return distance;
+}
+double getDouble()
+{
+    double value = 0.0;
+    scanf("%lf",&value);
+    return value;
 }
