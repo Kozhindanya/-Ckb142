@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <math.h>
+/**
+ * @brief Вычисляет расстояние между шарами по закону всемирного тяготения
+ * @param m_tonnes Масса шаров в тоннах
+ * @param f_coeff Коэффицент силы F
+ * @return double Расстояние между шарами в метрах
+ */
+double calculate_distance(const double m_tonnes,const double f_coeff);
+/**
+ * @brief Считывает с клавиатуры занчение с плавающей точкой
+ * @return Считанное значение
+ */
+double getDouble();
+/**
+ * @brief Точка входа в программу
+ * @return 0, если программа выполнена корректно, иначе не 0
+ */
+int main()
+{
+    double m_tonnes=0.0;
+    double f_coeff=0.0;
+
+    printf("Введите массу шаров в тоннах (m): \n ");
+    m_tonnes=getDouble();
+
+    printf("Введите коэффициент силы F: \n");
+    f_coeff=getDouble();
+
+    // вызов функции для расчёта
+    const double distance = calculate_distance(m_tonnes,f_coeff);
+    printf("Расстояние между шарами: %.4f м\n", distance);
+
+    return 0;
+}
+double calculate_distance(const double m_tonnes, const double f_coeff) 
+{
+    const double G = 6.6743e-11;// Гравитационная постоянная
+    // Перевод в систему СИ (тонны в кг, F*10^-5 в Н)
+    const double m_kg = m_tonnes * 1000.0;
+    const double force = f_coeff * 1e-5;
+    // Вычисление расстояния по формуле закона всемирного тяготения
+    const double distance = sqrt((G * m_kg * m_kg) / force);
+    return distance;
+}
+double getDouble()
+{
+    double value = 0.0;
+    scanf("%lf",&value);
+    return value;
+}
