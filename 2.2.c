@@ -1,8 +1,8 @@
+#define _USE_MATH_DEFINES
 #include <stdio.h>
 #include <math.h>
 #include <float.h>
 #include <stdlib.h>
-#define _USE_MATH_DEFINES
 
 /**
  * @brief Считывает с клавиатуры занчение с плавающей точкой
