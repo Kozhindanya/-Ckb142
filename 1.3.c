@@ -18,14 +18,11 @@ double getDouble();
  */
 int main()
 {
-    double m_tonnes=0.0;
-    double f_coeff=0.0;
-
     printf("Введите массу шаров в тоннах (m): \n ");
-    m_tonnes=getDouble();
+    double m_tonnes=getDouble();
 
     printf("Введите коэффициент силы F: \n");
-    f_coeff=getDouble();
+    double f_coeff=getDouble();
 
     // вызов функции для расчёта
     const double distance = calculate_distance(m_tonnes,f_coeff);
