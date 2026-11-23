@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <stdbool.h>
 /**
  * @brief Считывает и проверяет положительное вещественное число с клавиатуры.
  * @return Считанное значение.
@@ -37,27 +37,27 @@ int main()
     }
     
     // Перебираем возможные ориентации домов
-    int placed = 0;
+    bool placed = false;
 
     // Вариант А: оба дома ориентированы стандартно (p x q и r x s)
     if ((p + r <= a && (q <= b && s <= b)) || ((p <= a && r <= a) && q + s <= b))
     {
-        placed = 1;
+        placed = true;
     }
     // Вариант Б: первый стандартно, второй повернут
     else if ((p + s <= a && (q <= b && r <= b)) || ((p <= a && s <= a) && q + r <= b))
     {
-        placed = 1;
+        placed = true;
     }
     // Вариант В: первый повернут, второй стандартно
     else if ((q + r <= a && (p <= b && s <= b)) || ((q <= a && r <= a) && p + s <= b))
     {
-        placed = 1;
+        placed = true;
     }
     // Вариант Г: оба дома повернуты 
     else if ((q + s <= a && (p <= b && r <= b)) || ((q <= a && s <= a) && p + r <= b))
     {
-        placed = 1;
+        placed = true;
     }
 
     if (placed)
